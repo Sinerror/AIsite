@@ -3,7 +3,7 @@ from openai import OpenAI
 from deep_translator import GoogleTranslator
 
 app = Flask(__name__)
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=10000)
 
 # Create an OpenAI client with your deepinfra token and endpoint
 openai = OpenAI(
