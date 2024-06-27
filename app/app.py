@@ -14,10 +14,18 @@ openai = OpenAI(
 Cirilic_letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 
 # Главная страница
-@app.route('/')
+@app.route('/', methods=['GET', 'OPTIONS'])
 def index():
-    print("connection success")
-    return render_template('index.html')
+    if request.method == 'OPTIONS':
+        # Здесь можно вернуть нужные заголовки CORS
+        response = make_response()
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        return response, 200
+    else:
+        print("connection success")
+        return render_template('index.html')
 
 @app.route('/run_AI_stream', methods=['POST'])
 def run_function():
