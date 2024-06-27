@@ -1,0 +1,12 @@
+project/
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── img/
+│       └── bg1.png
+│
+└── templates/
+    └── index.html

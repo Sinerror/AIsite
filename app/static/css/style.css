@@ -1,0 +1,181 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url("../img/bc1.png"); /* Замените на путь к вашей картинке */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.social-panel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.social-panel a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.right-SPanel{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    padding-left: 15px;
+}
+
+.left-SPanel{
+    margin-left: auto;
+    padding-right: 15px;
+}
+
+.logo {
+    max-height: 50px;
+    max-width: 50px; 
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.custom-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.custom-input {
+    text-align: left;
+    padding: 15px;
+    font-size: 18px;
+    height: auto;
+    max-height: 20vh;
+    overflow: auto;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    outline: none;
+    white-space: pre-wrap;
+    resize: none; /* Отключаем возможность изменения размеров */
+    line-height: 1.5; /* Межстрочный интервал */
+}
+
+.placeholder-text {
+    font-size: 18px;
+    position: absolute;
+    top: 17px; /* Выравниваем по верхнему краю */
+    left: 15px; /* Отступ от левого края */
+    pointer-events: none; /* Чтобы текст-плейсхолдер не перехватывал события мыши */
+    color: rgba(255, 255, 255, 0.5); /* Цвет placeholder */
+    transition: opacity 0.1s ease; /* Плавное появление/исчезание */
+}
+
+.hidden {
+    opacity: 0;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: 2px solid rgb(0, 183, 255);
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background: rgb(0, 183, 255);
+    color: white;
+}
+
+.output {
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: none;
+    width: 100%;
+    max-width: 800px;
+    max-height: 73vh;
+    height: auto;
+    transition: all 0.4s ease-in-out;
+    font-size: 18px;
+    overflow: auto;
+    align-items: left;
+}
+
+#text-container {
+    font-size: 48px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Позиционирование для псевдоэлемента */
+}
+  
+#text-container::after {
+    content: "▍"; /* Текст псевдоэлемента (курсор) */
+    display: inline-block; /* Располагаем курсор в строке текста */
+    animation: blink-caret 0.7s infinite; /* Анимация мигания */
+}
+
+#translate {
+    font-size: 14px;
+    color: rgba(139, 139, 139, 0.5);
+    margin: 8px;
+    margin-bottom: 14px;
+    align-items: center;
+    cursor: pointer;
+}
+#translate:hover {
+    color: rgb(0, 183, 255);
+}
+  
+@keyframes blink-caret {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .social-panel a {
+        font-size: 14px;
+    }
+    input[type="text"], .output {
+        font-size: 16px;
+    }
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

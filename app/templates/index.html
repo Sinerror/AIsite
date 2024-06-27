@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умное резюме</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="social-panel">  
+        <div class="right-SPanel">
+            <img class="logo" src="{{ url_for('static', filename='img/smily.png') }}" alt="Логотип"></img>
+            <a>Косенков В.В.</a>
+        </div>
+        <div class="left-SPanel">
+            <a href="https://discordapp.com/users/350921586473435145">Discord</a>
+            <a href="https://t.me/Sinerr0r">Telegram</a>
+            <a href="https://vk.com/v.kosenkov2014">ВКонтакте</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="outputText" class="output"><p id="text-container"></p></div>
+        <div class="custom-input-container">
+            <div class="placeholder-text">Что вы хотите спросить?...</div>
+            <div type="text" id="inputText" class="custom-input" contenteditable="true"></div>
+        </div>
+        <div id="translate">Нажмите здесь чтобы перевести текст вывода на русский.</div>
+        <button id="Ai_button">Сделать запрос</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</body>
+</html>
