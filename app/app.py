@@ -16,6 +16,7 @@ Cirilic_letters = 'абвгдеёжзийклмнопрстуфхцчшщъыь�
 # Главная страница
 @app.route('/')
 def index():
+    print("connection success")
     return render_template('index.html')
 
 @app.route('/run_AI_stream', methods=['POST'])
